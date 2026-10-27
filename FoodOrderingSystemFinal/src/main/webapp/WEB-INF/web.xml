@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+         https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         id="WebApp_ID" version="5.0">
+
+    <display-name>Food Ordering System</display-name>
+
+    <!-- Welcome Files -->
+    <welcome-file-list>
+        <welcome-file>pages/user/index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- Character Encoding Filter -->
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>com.foodorder.filter.EncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- Login Authentication Filter Mapping -->
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>com.foodorder.filter.LoginFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name>
+        <url-pattern>/pages/user/cart.jsp</url-pattern>
+        <url-pattern>/pages/user/checkout.jsp</url-pattern>
+        <url-pattern>/pages/user/orderList.jsp</url-pattern>
+        <url-pattern>/pages/user/orderDetail.jsp</url-pattern>
+        <url-pattern>/pages/user/orderConfirm.jsp</url-pattern>
+        <url-pattern>/cartServlet</url-pattern>
+        <url-pattern>/orderServlet</url-pattern>
+    </filter-mapping>
+
+    <!-- Admin Authorization Filter Mapping -->
+    <filter>
+        <filter-name>AdminFilter</filter-name>
+        <filter-class>com.foodorder.filter.AdminFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AdminFilter</filter-name>
+        <url-pattern>/pages/admin/*</url-pattern>
+        <url-pattern>/admin/*</url-pattern>
+    </filter-mapping>
+
+    <!-- Custom Error Pages -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/pages/common/404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/pages/common/error.jsp</location>
+    </error-page>
+
+    <mime-mapping>
+        <extension>css</extension>
+        <mime-type>text/css</mime-type>
+    </mime-mapping>
+
+</web-app>

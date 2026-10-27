@@ -1,0 +1,239 @@
+body {
+    font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", Roboto, sans-serif;
+    background-color: #faf6f1;
+    color: #2d2d2d;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+nav.navbar.navbar-expand-lg {
+    background: linear-gradient(90deg, #d35400 0%, #e67e22 100%);
+    padding: 14px 0;
+    border: none;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.banner-img {
+    height: 320px;
+    object-fit: cover;
+}
+
+nav.navbar .navbar-brand {
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+nav.navbar .navbar-brand:hover {
+    color: #fff3cd;
+}
+
+nav.navbar .nav-link {
+    position: relative;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 4px;
+    transition: color 0.3s ease;
+}
+
+nav.navbar .nav-link:hover {
+    color: #fff3cd;
+}
+
+nav.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: 2px;
+    height: 2px;
+    background: #ffffff;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+nav.navbar .nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+div.card {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #ffffff;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+div.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.14);
+}
+
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+div.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+
+button.btn.btn-outline-primary,
+a.btn.btn-primary {
+    background-color: #e67e22;
+    border-color: #e67e22;
+    color: #ffffff;
+    transition: all 0.25s ease;
+}
+
+button.btn.btn-outline-primary:hover,
+a.btn.btn-primary:hover {
+    background-color: #d35400;
+    border-color: #d35400;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(230, 126, 34, 0.35);
+}
+
+
+.form-control {
+    border-radius: 10px;
+}
+
+.form-control:focus {
+    border-color: #e67e22;
+    box-shadow: 0 0 0 0.2rem rgba(230, 126, 34, 0.25);
+}
+
+footer.bg-dark {
+    background: #333333 !important;
+    color: #ffffff;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+
+.display-4 {
+    font-weight: 700;
+}
+
+.lead {
+    color: #333333 !important;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+} 
+
+@media (max-width: 768px) {
+
+    .display-4 {
+        font-size: 2rem;
+    }
+  .lead {
+        font-size: 1rem;
+    }
+
+    div.card:hover {
+        transform: translateY(-3px);
+    }
+
+    nav.navbar .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    nav.navbar .nav-link {
+        margin: 2px 0;
+    }
+	
+}
+
+.list-group-item {
+	    border: none;
+	    border-radius: 8px !important;
+	    margin-bottom: 8px;
+	    color: #333;
+	    font-weight: 500;
+	    transition: all 0.25s ease;
+}
+	
+.list-group-item:hover {
+	    background-color: #f8e6d5;
+	    color: #d35400;
+	    transform: translateX(4px);
+}
+	
+.list-group-item.active {
+	    background: linear-gradient(90deg, #d35400 0%, #e67e22 100%);
+	    border-color: #d35400;
+	    color: #fff;
+	    font-weight: 600;
+	    box-shadow: 0 4px 10px rgba(211, 84, 0, 0.25);
+}
+
+.card-body .qty-control {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    height: 38px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.card-body .qty-control button {
+    width: 36px;
+    height: 38px;
+    border: none;
+    background: #f6f6f6;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.card-body .qty-control button:hover {
+    background: #e67e22;
+    color: white;
+}
+
+.card-body .qty-control .qty-input {
+    width: 50px;
+    height: 38px;
+    text-align: center;
+    border: none;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-radius: 0;
+    font-weight: 600;
+    background: white;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    flex-shrink: 0;
+}
